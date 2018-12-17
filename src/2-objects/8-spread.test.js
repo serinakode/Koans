@@ -8,7 +8,7 @@ describe('spread operator (...)', function() {
       ...person,
       weapon: 'Katana'
     };
-    expect(samurai).toEqual(__);
+    expect(samurai).toEqual({ name: 'Myamoto', age: 32, weapon: 'Katana' });
   });
   test('2 - should understand spread operator', function() {
     const samurai1 = {
@@ -19,7 +19,7 @@ describe('spread operator (...)', function() {
       ...samurai1,
       name: 'Hattori'
     };
-    expect(samurai2).toEqual(__);
+    expect(samurai2).toEqual({ name: 'Myamoto', age: 32, name: 'Hattori' });
   });
   test('3 - should understand spread operator', function() {
     const samurai1 = {
@@ -30,6 +30,6 @@ describe('spread operator (...)', function() {
       name: 'Hattori',
       ...samurai1
     };
-    expect(samurai2).toEqual(__);
+    expect(samurai2).toEqual({ name: 'Hattori', name: 'Myamoto', age: 32 });
   });
 });
