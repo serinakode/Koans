@@ -6,8 +6,8 @@ describe('Destructuring', function() {
       name: 'Myamoto'
     };
     const { name, age } = samurai;
-    expect(name).toBe(__);
-    expect(age).toBe(__);
+    expect(name).toBe('Myamoto');
+    expect(age).toBe(32);
   });
   test('2 - should understand object destructuring & rest operator', function() {
     const samurai = {
@@ -16,8 +16,8 @@ describe('Destructuring', function() {
       name: 'Myamoto'
     };
     const { name, ...person } = samurai;
-    expect(name).toBe(__);
-    expect(person).toEqual(__);
+    expect(name).toBe('Myamoto');
+    expect(person).toEqual({ age: 32, isMaster: true }); // checkpoint
   });
   test('3 - should understand object destructuring', function() {
     const samurai = {
@@ -26,7 +26,7 @@ describe('Destructuring', function() {
       name: 'Myamoto'
     };
     const { name: personName, age: personAge } = samurai;
-    expect(personName).toBe(__);
-    expect(personAge).toBe(__);
+    expect(personName).toBe('Myamoto');
+    expect(personAge).toBe(32);
   });
 });
