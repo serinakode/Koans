@@ -14,19 +14,19 @@ describe('Updating property value', function() {
       name: samurai1.name
     };
     samurai2.name = 'Hattori';
-    expect(samurai2.name).toBe(__);
-    expect(samurai1.name).toBe(__);
+    expect(samurai2.name).toBe('Hattori');
+    expect(samurai1.name).toBe('Myamoto');
   });
   test('2 - should know how to update object values', function() {
     const samurai3 = {
       address: samurai1.address
     };
     samurai3.address.street = 'Ninja Way';
-    expect(samurai3.address.street).toBe(__);
-    expect(samurai1.address.street).toBe(__);
+    expect(samurai3.address.street).toBe('Ninja Way');
+    expect(samurai1.address.street).toBe('Ninja Way');
   });
   test('3 - should understand references', function() {
     samurai1.samurai = samurai1;
-    expect(samurai1.samurai.samurai.samurai.samurai.name).toBe(__);
+    expect(samurai1.samurai.samurai.samurai.samurai.name).toBe('Myamoto');
   });
 });
