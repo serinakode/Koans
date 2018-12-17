@@ -1,9 +1,7 @@
 function isCellAliveInNextGeneration(isCellAlive, numberOfLiveNeighbours) {
   //TODO - Implement one test at a time
 
-  if (numberOfLiveNeighbours > 3) {
-    return (isCellAlive = false);
-  } else if (numberOfLiveNeighbours < 2) {
+  if (numberOfLiveNeighbours < 2 || numberOfLiveNeighbours > 3) {
     return (isCellAlive = false);
   }
 
