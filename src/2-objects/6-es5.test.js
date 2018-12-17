@@ -12,24 +12,28 @@ describe('Some ES5 features', function() {
         }
       }
     );
-    expect(myObject.firstName).toBe(__);
+
+    expect(myObject.firstName).toBe('Myamoto');
     for (const propertyName in myObject) {
       numEnumerableProperties++;
     }
-    expect(numEnumerableProperties).toBe(__);
+    expect(numEnumerableProperties).toBe(0); // checkpoint
     try {
       myObject.firstName = 'Hattori';
     } catch (e) {
       //intentionally empty
     }
-    expect(myObject.firstName).toBe(__);
+    expect(myObject.firstName).toBe('Hattori');
     try {
       delete myObject.firstName;
     } catch (e) {
       //intentionally empty
     }
-    expect(myObject.firstName).toBe(__);
+    expect(myObject.firstName).toBe('Hattori');
   });
+
+  // The Object.seal() method seals an object, preventing new properties from being added to it.
+  // åValues of present properties can still be changed as long as they are writable.
   test('should understand Object.seal', function() {
     const samurai = {
       name: 'Myamoto'
@@ -41,14 +45,14 @@ describe('Some ES5 features', function() {
     } catch (e) {
       //Intentionally empty
     }
-    expect(samurai.name).toBe(__);
+    expect(samurai.name).toBe('Hattori');
 
     try {
       samurai.address = '1 Ninja Way';
     } catch (e) {
       //Intentionally empty
     }
-    expect(samurai.address).toBe(__);
+    expect(samurai.address).toBe(undefined);
   });
   test('should understand Object.freeze', function() {
     const samurai = {
@@ -61,13 +65,13 @@ describe('Some ES5 features', function() {
     } catch (e) {
       //Intentionally empty
     }
-    expect(samurai.name).toBe(__);
+    expect(samurai.name).toBe('Myamoto');
 
     try {
       samurai.address = '1 Ninja Way';
     } catch (e) {
       //Intentionally empty
     }
-    expect(samurai.address).toBe(__);
+    expect(samurai.address).toBe(undefined);
   });
 });
