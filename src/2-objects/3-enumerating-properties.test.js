@@ -23,9 +23,9 @@ describe('Enumerating properties', function() {
         enumerableProperties += 1;
       }
     }
-    expect(properties).toBe(__);
-    expect(ownProperties).toBe(__);
-    expect(enumerableProperties).toBe(__);
+    expect(properties).toBe(4);
+    expect(ownProperties).toBe(4);
+    expect(enumerableProperties).toBe(4); // function() is enumerable.
   });
   test('2 - should understand Object.keys', function() {
     const samurai = {
@@ -39,6 +39,11 @@ describe('Enumerating properties', function() {
         return 'I am a Samurai!';
       }
     };
-    expect(Object.keys(samurai)).toEqual(__);
+    expect(Object.keys(samurai)).toEqual([
+      'name',
+      'age',
+      'address',
+      'toString'
+    ]);
   });
 });
