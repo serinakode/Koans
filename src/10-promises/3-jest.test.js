@@ -24,11 +24,11 @@ describe('Simpler tests using jest', function() {
   test('1 - should understand testing resolved promises', function() {
     return leaderboardService
       .getLeaderboard()
-      .then(leaderboard => expect(leaderboard).toEqual(__));
+      .then(leaderboard => expect(leaderboard).toEqual([5, 3, 2, 4, 1]));
   });
   test('2 - should understand rejected promises', function() {
     return leaderboardService
       .getLeaderboardBadJSON()
-      .catch(reason => expect(reason).toEqual(__));
+      .catch(reason => expect(reason).toEqual([5, 3, 2, 4, 1]));
   });
 });
