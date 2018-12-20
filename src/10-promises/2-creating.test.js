@@ -5,7 +5,7 @@ describe('Creating promises', function() {
     });
     promise.then(
       player => {
-        expect(player).toEqual(__);
+        expect(player).toEqual({ name: 'Myamoto', age: 32 });
         done();
       },
       () => {
@@ -23,7 +23,7 @@ describe('Creating promises', function() {
         done.fail('This should not be executed');
       },
       reason => {
-        expect(reason).toEqual(__);
+        expect(reason).toEqual(new Error('communicationProblem'));
         done();
       }
     );
