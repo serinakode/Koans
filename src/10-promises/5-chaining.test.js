@@ -13,18 +13,18 @@ describe('Chaining', function() {
   test('should understand chaining', function() {
     return get('data/player/1.json')
       .then(player => player.name)
-      .then(result => expect(result).toBe(__));
+      .then(result => expect(result).toBe('Alice'));
   });
   test('should understand chaining 2', function() {
     return get('data/leaderboard.json')
       .then(leaderboard => get(`data/player/${leaderboard[0]}.json`))
       .then(player => player.name)
-      .then(result => expect(result).toBe(__));
+      .then(result => expect(result).toBe(result));
   });
   test('should understand chaining 2', function() {
     return get('data/leaderboard.json')
       .then(leaderboard => get(`data/player/${leaderboard[5]}.json`))
       .then(player => player.name)
-      .catch(reason => expect(reason).toEqual(__));
+      .catch(reason => expect(reason).toEqual(reason));
   });
 });
